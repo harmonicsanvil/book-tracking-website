@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/nav.css" />
+  <link rel="stylesheet" href="css/searchRes.css" />
+  <title>Home</title>
+</head>
+
+<body>
+  <%- include ('partials/nav.ejs')%>
+
+  <div class="books">
+    <% let i = 0 %>
+    <% books.books.forEach((book) => {  %>
+    <div class="book">
+      <img src=<%= book.image %>>
+      <h3> Title: <%= book.title %> </h3>
+      <% let authors = " " ;%>
+      <% book.authors.forEach((author) => { %>
+      <% authors += author + ", " %>
+      <% }); %>
+      <h3> Author: <%- authors %> </h3>
+      <h3> Publisher: <%= book.publisher %> </h3>
+      <h3> Language: <%= book.language %> </h3>
+      <h3> Description: <%= book.description %> </h3>
+      <form class="bookStatus">
+        <select name="status" class="options">
+          <option value=" " <% if(book.status === " ") { %> selected <% }%>> </option>
+          <option value="to-read" <% if(book.status === "to-read") { %> selected <% }%>>to-read</option>
+          <option value="read" <% if(book.status === "read") { %> selected <% }%>>read</option>
+          <option value="reading" <% if(book.status === "reading") { %> selected <% }%>>reading</option>
+          <option value="dropped" <% if(book.status === "dropped") { %> selected <% }%>>dropped</option>
+
+
+        </select>
+        <input type="hidden" name="index" value=<%-i%> />
+      </form>
+      <% i = i+1 %>
+    </div>
+    <% }); %>
+  </div>
+  <script src="js/searchRes.js"> </script>
+</body>
+
+</html>

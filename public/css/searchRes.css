@@ -1,0 +1,38 @@
+
+
+
+.books {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.books .book {
+  position: relative;
+  padding: 15px 15px;
+  width : 600px;
+  border: 1px solid rgba(0,0,0,1);
+  background-color: #f4f4f4;
+  border-radius: 15px;
+  margin: 10px;
+}
+
+.books .book img {
+  height: 225px;
+  width: 150px;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+.books .book .options {
+  position: absolute;
+  top: 80px;
+  right : 40px;
+  width: 80px;
+  height: 20px;
+}
+
+
+

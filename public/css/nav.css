@@ -1,0 +1,193 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+.site {
+  font-size: 60px;
+  color: #ff5d94;
+  padding: 10px 10px;
+  border-bottom: 2px solid black;
+
+}
+
+.navBar {
+  padding : 10px 10px;
+  border-bottom: 2px solid black;
+}
+
+
+.navBar .menu a {
+  padding: 10px 10px;
+  font-size: 50px;
+  color: #7f7f7f;
+  font-weight: 500;
+  text-decoration: none;
+  text-align: center;
+
+}
+
+
+.navBar .menu input {
+  position: absolute;
+  background-color: #7b7b7b;
+  color: white;
+  top: 105px;
+  right: 40%;
+  width: 350px;
+  height: 52px;
+  font-size: 28px;
+  outline: none;
+  border: none;
+}
+
+.navBar .menu input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 1; /* Firefox */
+}
+
+
+
+
+.profile{
+  position: absolute;
+  top: 95px;
+  right: 20px;
+  height: 60px;
+  width: 60px;
+}
+
+.profile img {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  height: 70%;
+  width: 70%;
+  object-fit: cover;
+}
+
+.profile .dropdown {
+  position: absolute;
+  top: 58px;
+  right: -10px;
+  padding: 30px 20px;
+  background: #fff;
+  width:150px;
+  box-sizing: 0 5px 25px rgba(0,0,0,1);
+  border-radius: 15px;
+  visibility: hidden;
+}
+
+.profile .dropdown ul li {
+  list-style: none;
+  padding: 10px 0;
+  border-top: 1px solid rgba(0,0,0,1);
+  direction: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+}
+
+.profile .dropdown ul li a{
+  text-decoration: none;
+  color: hsla(0, 1%, 20%, 0.87);
+  font-weight: 500;
+}
+
+.profile .dropdown ul li:hover a{
+  color: #ff5d94;
+}
+
+.profile:hover .dropdown {
+  visibility: visible;
+}

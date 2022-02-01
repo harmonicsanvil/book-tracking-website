@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Register</title>
+        <link rel="stylesheet" href="css/signup.css">
+    </head>
+    <body>
+        <div class='form'>
+            <form action='/register' method='POST'>
+                <label>Email</label>
+                <input type='email' placeholder="Enter your emailid" class="input" name="email" id="email" required>
+                <label>Username</label>
+                <input type='text' placeholder="Enter your username" class="input" name="username" id="username" required>
+                <small class="username"></small>
+                <label>Password</label>
+                <input type='password' placeholder='Enter your password' class=input name="password" id="password" required>
+                <label>Repeat Password</label>
+                <input type='password' placeholder='Repeat password' class="input" name="repeatPassword" id="repeatPassword" required>
+                <small class="repeatPassword"> </small>
+                <div class="button">
+                    <button type=submit> Register </button>
+                </div>
+            </form>
+        </div>
+        <script src='js/register.js'></script>
+    </body>
+</html>

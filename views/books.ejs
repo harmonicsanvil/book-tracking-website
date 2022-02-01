@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/nav.css" />
+    <link rel="stylesheet" href="css/books.css" />
+    <title>Home</title>
+  </head>
+
+  <body>
+    <%- include ('partials/nav.ejs') %>
+      <div class="panelParent">
+        <div class="booksPanel" id="reading">reading</div>
+        <div class="booksPanel" id="to-read">to-read</div>
+        <div class="booksPanel" id="read">read</div>
+        <div class="booksPanel" id="dropped">dropped</div>
+      </div>
+      <div class="books">
+        <% let i = 0 %>
+        <% books.forEach((book) => { %>
+          <% if(book.status === "reading") { %>
+            <div class="book reading">
+              <img src= <%= book.image %> />
+              
+              <div class="info">
+                <form class="bookStatus">
+                  <select name="status" class="options">
+                    <option value=" "> </option>
+                    <option value="to-read">to-read</option>
+                    <option value="read">read</option>
+                    <option value="reading" selected >reading</option>
+                    <option value="dropped">dropped</option>
+                  </select>
+                  <input type="hidden" name="index" value=<%-i%> />
+                </form>
+                <h3>Title: <%= book.title %></h3>
+                <% let authors = " " ;%> 
+                <% book.authors.forEach((author) => { %> 
+                  <%authors += author + ", " %> 
+                <% }); %>
+                <h3>Author: <%- authors %></h3>
+                <h3>Publisher: <%= book.publisher %></h3>
+                <h3>Language: <%= book.language %></h3>
+              </div>  
+            </div>
+          <% }; %>
+
+          <% if(book.status === "to-read") { %>
+            <div class="book to-read">
+              <img src= <%= book.image %> />
+              <div class="info">
+                <form class="bookStatus">
+                  <select name="status" class="options">
+                    <option value=" "> </option>
+                    <option value="to-read" selected > to-read</option>
+                    <option value="read">read</option>
+                    <option value="reading">reading</option>
+                    <option value="dropped">dropped</option>
+                  </select>
+                  <input type="hidden" name="index" value=<%-i%> />
+                </form>
+                <h3>Title: <%= book.title %></h3>
+                <% let authors = " " ;%> 
+                <% book.authors.forEach((author) => { %> 
+                  <%authors += author + ", " %> 
+                <% }); %>
+                <h3>Author: <%- authors %></h3>
+                <h3>Publisher: <%= book.publisher %></h3>
+                <h3>Language: <%= book.language %></h3>
+              </div>
+            </div>
+          <% }; %>
+
+          <% if(book.status === "read") { %>
+            <div class="book read">
+              <img src= <%= book.image %> />
+              <div class="info">
+                <form class="bookStatus">
+                  <select name="status" class="options">
+                    <option value=" "> </option>
+                    <option value="to-read">to-read</option>
+                    <option value="read" selected>read</option>
+                    <option value="reading">reading</option>
+                    <option value="dropped">dropped</option>
+                  </select>
+                  <input type="hidden" name="index" value=<%-i%> />
+                </form>
+                <h3>Title: <%= book.title %></h3>
+                <% let authors = " " ;%> 
+                <% book.authors.forEach((author) => { %> 
+                  <%authors += author + ", " %> 
+                <% }); %>
+                <h3>Author: <%- authors %></h3>
+                <h3>Publisher: <%= book.publisher %></h3>
+                <h3>Language: <%= book.language %></h3>
+              </div>
+            </div>
+          <% }; %>
+
+          <% if(book.status === "dropped") { %>
+            <div class="book dropped">
+              <img src= <%= book.image %> />
+              <div class="info">
+                <form class="bookStatus">
+                  <select name="status" class="options">
+                    <option value=" "> </option>
+                    <option value="to-read">to-read</option>
+                    <option value="read">read</option>
+                    <option value="reading">reading</option>
+                    <option value="dropped" selected>dropped</option>        
+                  </select>
+                  <input type="hidden" name="index" value=<%-i%> />
+                </form>
+                <h3>Title: <%= book.title %></h3>
+                <% let authors = " " ;%> 
+                <% book.authors.forEach((author) => { %> 
+                  <%authors += author + ", " %> 
+                <% }); %>
+                <h3>Author: <%- authors %></h3>
+                <h3>Publisher: <%= book.publisher %></h3>
+                <h3>Language: <%= book.language %></h3>
+              </div>
+            </div>
+          <% }; %>
+          <% i = i+1 %>
+        <% });%>
+      </div>
+      <script src="js/books.js"></script>
+  </body>
+</html>
