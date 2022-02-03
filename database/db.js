@@ -1,9 +1,12 @@
 const mongoose = require("mongoose");
+const url = 'mongodb+srv://admin:whywhywhy3@cluster0.fc2ha.mongodb.net/book-tracking-website?retryWrites=true&w=majority'
 //const userModel = require("./userModel");
+
+
 const profileSchema = require("./profileSchema")
 class database {
   constructor() {
-    mongoose.connect("mongodb://localhost/test1", {
+    mongoose.connect(url, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });

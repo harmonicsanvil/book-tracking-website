@@ -3,6 +3,7 @@ const database = require("./database/db");
 const gBooks = require("./api/googlebooks");
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
+const url = 'mongodb+srv://admin:whywhywhy3@cluster0.fc2ha.mongodb.net/book-tracking-website?retryWrites=true&w=majority'
 const app = express();
 const db = new database();
 const signup = require('./helperFunctions/signup');
@@ -21,7 +22,7 @@ app.use(
     resave: false,
     saveUninitialized: false,
     store: MongoStore.create({
-      mongoUrl: "mongodb://localhost/test1",
+      mongoUrl: url,
     }),
     cookie: { maxAge: 1000 * 60 * 60 },
   })
@@ -47,6 +48,7 @@ const redirectLogin = (req, res, next) => {
 
 app.get("/", redirectLogin, async (req, res) => {
   const stats = await db.getStats(req.session.username);
+  console.log(stats)
   res.render("home.ejs", {stats, name : req.session.username});
 });
 
